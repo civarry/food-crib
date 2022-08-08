@@ -1,0 +1,10 @@
+@media only screen and (max-width:800px) {
+  /* For tablets: */
+  body{
+
+  }
+}
+
+.table-auto{
+  overflow-x:auto
+}

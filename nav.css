@@ -1,0 +1,126 @@
+body {
+  height: 100vh;
+  background: linear-gradient(45deg, rgb(173, 126, 26), rgb(180, 23, 88));
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.5;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+nav {
+  position: absolute;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 4.5rem;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.logo-span {
+  font-weight: 400;
+}
+
+.hamburger {
+  cursor: pointer;
+  display: none;
+}
+
+.hamburger div {
+  height: 3px;
+  width: 25px;
+  background-color: #fff;
+  margin: 5px;
+  transition: all 0.3s ease-in;
+}
+
+.hamburger div:nth-child(2) {
+  width: 20px;
+  margin-left: auto;
+}
+
+.nav-links {
+  display: flex;
+}
+
+.nav-links li {
+  list-style: none;
+}
+
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.75rem;
+}
+
+.nav-links li:not(:last-child) {
+  margin-right: 2rem;
+}
+
+.nav-link:hover {
+  border-bottom: 1px solid #fff;
+  color: rgb(230, 230, 230);
+}
+
+main {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  place-content: center;
+  text-align: center;
+}
+
+@media only screen and (max-width: 768px) {
+  nav {
+    padding: 1.5rem 1rem;
+  }
+  .hamburger {
+    display: block;
+  }
+  .hamburger.toggle .line-1 {
+    transform: rotate(45deg);
+    position: relative;
+    top: 8px;
+  }
+
+  .hamburger.toggle .line-2 {
+    transform: translateX(20px);
+    opacity: 0;
+  }
+
+  .hamburger.toggle .line-3 {
+    transform: rotate(-45deg);
+    position: relative;
+    top: -8px;
+  }
+  .nav-links {
+    position: absolute;
+    height: calc(100vh - 4.875rem);
+    top: 4.875rem;
+    right: 0;
+    width: 75%;
+    transform: translateX(100%);
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    transition: transform 0.3s ease-in;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 05px 0 0 0;
+  }
+
+  .nav-links li:not(:last-child) {
+    margin-right: 0;
+  }
+  .nav-links.active {
+    transform: translateX(0);
+  }
+}
